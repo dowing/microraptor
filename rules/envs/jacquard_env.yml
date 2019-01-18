@@ -1,0 +1,8 @@
+name: jacquard_env
+channels:
+  - ged
+  - conda-forge
+  - http://conda.anaconda.org/dranew
+  - defaults
+prefix: /home/cjsifuen/miniconda3/envs/jacquard_env
+

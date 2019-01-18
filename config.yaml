@@ -1,0 +1,95 @@
+project_dir:
+    '/ccmb/BioinfCore/ActiveProjects/LSA_Buttitta_buttitta_CU4_cjsifuen_NR/'
+email_address:
+    'cjsifuen@umich.edu'
+analysis_dir_suffix: 
+    'analysis_09_14/'
+input_dir:
+    fastq: '/ccmb/BioinfCore/ActiveProjects/LSA_Buttitta_buttitta_CU4_cjsifuen_NR/input/'
+    ref: '/ccmb/BioinfCore/ActiveProjects/cjsifuen/exomeseq/reference/'
+    target_bed: '/ccmb/BioinfCore/ActiveProjects/cjsifuen/exomeseq/input/exome_capture.target.intervals'
+    panel_of_normals:
+    scripts: '/ccmb/BioinfCore/ActiveProjects/cjsifuen/exomeseq/scripts/'
+    snpeff: '/home/cjsifuen/miniconda3/envs/snpeff_env/share/snpeff-4.3.1t-1/scripts/'
+samples:
+    BS05021: ['BS05021_R1.fastq.gz', 'BS05021_R2.fastq.gz']
+    BS05022: ['BS05022_R1.fastq.gz', 'BS05022_R2.fastq.gz']
+    BS05023: ['BS05023_R1.fastq.gz', 'BS05023_R2.fastq.gz']
+    BS05024: ['BS05024_R1.fastq.gz', 'BS05024_R2.fastq.gz']
+    BS05025: ['BS05025_R1.fastq.gz', 'BS05025_R2.fastq.gz']
+    BS05026: ['BS05026_R1.fastq.gz', 'BS05026_R2.fastq.gz']
+    BS05027: ['BS05027_R1.fastq.gz', 'BS05027_R2.fastq.gz']
+    BS05028: ['BS05028_R1.fastq.gz', 'BS05028_R2.fastq.gz']
+    BS05029: ['BS05029_R1.fastq.gz', 'BS05029_R2.fastq.gz']
+    BS05030: ['BS05030_R1.fastq.gz', 'BS05030_R2.fastq.gz']
+    BS05031: ['BS05031_R1.fastq.gz', 'BS05031_R2.fastq.gz']
+    BS05032: ['BS05032_R1.fastq.gz', 'BS05032_R2.fastq.gz']
+    BS05033: ['BS05033_R1.fastq.gz', 'BS05033_R2.fastq.gz']
+    BS05034: ['BS05034_R1.fastq.gz', 'BS05034_R2.fastq.gz']
+    BS05035: ['BS05035_R1.fastq.gz', 'BS05035_R2.fastq.gz']
+    BS05036: ['BS05036_R1.fastq.gz', 'BS05036_R2.fastq.gz']
+    BS05037: ['BS05037_R1.fastq.gz', 'BS05037_R2.fastq.gz']
+    BS05038: ['BS05038_R1.fastq.gz', 'BS05038_R2.fastq.gz']
+    BS05039: ['BS05039_R1.fastq.gz', 'BS05039_R2.fastq.gz']
+    BS05040: ['BS05040_R1.fastq.gz', 'BS05040_R2.fastq.gz']
+pairings: #tumor : normal
+    BS05022: BS05021
+    BS05023: BS05021
+    BS05025: BS05024
+    BS05026: BS05024
+    BS05028: BS05027
+    BS05029: BS05027
+    BS05031: BS05030
+    BS05032: BS05030
+    BS05035: BS05034
+    BS05036: BS05034
+    BS05038: BS05037
+    BS05039: BS05037
+    BS05040: BS05037
+singleton: 'BS05033'
+paired_ext: ['_R1.fastq', '_R2.fastq'] #not in use yet, but an option to implement later
+genome: 
+    'hg19' #not in use yet, but an option to implement later
+thread_info:
+    fastqc: 6
+    fastq_trim: 16
+    alignment: 20
+    sort: 20
+    manta: 10
+read_info:
+    read_length: 'queryname'
+    library_type: ''
+fastq_trim:
+    score: 'phred33'
+    illuminaclip: 'TruSeq3-PE-2.fa:2:30:10'
+    leading: 10
+    trailing: 10
+    slidingwindow: '5:0'
+    minlen: 25
+sam_to_bam:
+    sortorder: 'coordinate'
+    validationstringency: 'LENIENT'
+    createindex: 'true'
+mark_duplicates:
+    removeduplicates: 'false'
+    validationstringency: 'LENIENT'
+    createindex: 'true'
+coverage:
+    baitintervals: '/ccmb/BioinfCore/ActiveProjects/cjsifuen/exomeseq/input/exome_capture.target.intervals'
+    targetintervals: '/ccmb/BioinfCore/ActiveProjects/cjsifuen/exomeseq/input/exome_capture.target.intervals'
+mutect2:
+    intervals: '/ccmb/BioinfCore/ActiveProjects/cjsifuen/exomeseq/input/S07604514_Covered.bed'
+    germline: '/ccmb/BioinfCore/ActiveProjects/cjsifuen/exomeseq/reference/af-only-gnomad.raw.sites.b37.vcf'
+sequencing_artifacts:
+    intervals: '/ccmb/BioinfCore/ActiveProjects/cjsifuen/exomeseq/input/exome_capture.target.intervals'
+fill-fs:
+    length: 10
+dbnsfp_annotation:
+    annot: 'gnomAD_exomes_AF,ExAC_AF,clinvar_clnsig,Ensembl_proteinid'
+extract_fields:
+    fields: 'CHROM POS REF ALT ANN[0].EFFECT ANN[0].IMPACT ANN[0].GENE ANN[0].GENEID ANN[0].HGVS_C'
+manta_configure: 
+    callRegions: '/ccmb/BioinfCore/ActiveProjects/cjsifuen/exomeseq/input/S07604514_Covered.bed.gz'
+grep_variants:
+    genes: '/ccmb/BioinfCore/ActiveProjects/LSA_Buttitta_buttitta_CU4_cjsifuen_NR/analysis_09_14/gene_lists.txt'
+    

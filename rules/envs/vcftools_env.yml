@@ -1,0 +1,27 @@
+name: vcftools_env
+channels:
+  - bioconda
+  - conda-forge
+  - ged
+  - http://conda.anaconda.org/dranew
+  - defaults
+dependencies:
+  - libdeflate=1.0
+  - perl-threaded=5.22.0
+  - perl-vcftools-vcf=0.1.16
+  - samtools=1.9
+  - bzip2=1.0.6
+  - ca-certificates=2018.8.24
+  - curl=7.61.0
+  - krb5=1.14.6
+  - libgcc=7.2.0
+  - libgcc-ng=7.2.0
+  - libssh2=1.8.0
+  - libstdcxx-ng=7.2.0
+  - ncurses=6.1
+  - openssl=1.0.2p
+  - perl=5.26.2
+  - xz=5.2.4
+  - zlib=1.2.11
+prefix: /home/cjsifuen/miniconda3/envs/vcftools_env
+
